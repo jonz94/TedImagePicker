@@ -6,7 +6,6 @@ import android.database.Cursor
 import android.net.Uri
 import android.os.Build
 import android.provider.MediaStore
-import gun0912.tedimagepicker.R
 import gun0912.tedimagepicker.builder.type.MediaType
 import gun0912.tedimagepicker.model.Album
 import gun0912.tedimagepicker.model.Media
@@ -22,7 +21,7 @@ internal class GalleryUtil {
 
         private lateinit var albumName: String
 
-        internal fun getMedia(context: Context, mediaType: MediaType): Single<List<Album>> {
+        internal fun getMedia(context: Context, mediaType: MediaType, albumAllText: String): Single<List<Album>> {
             return Single.create { emitter ->
                 try {
 
@@ -76,10 +75,9 @@ internal class GalleryUtil {
 
 
                         val totalAlbum = totalImageList.run {
-                            val albumName = context.getString(R.string.ted_image_picker_album_all)
                             Album(
-                                albumName,
-                                getOrElse(0) { Media(albumName, Uri.EMPTY, 0) }.uri,
+                                albumAllText,
+                                getOrElse(0) { Media(albumAllText, Uri.EMPTY, 0) }.uri,
                                 this
                             )
                         }

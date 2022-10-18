@@ -9,7 +9,6 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.view.animation.AccelerateDecelerateInterpolator
@@ -135,7 +134,8 @@ internal class TedImagePickerActivity : AppCompatActivity() {
     }
 
     private fun loadMedia(isRefresh: Boolean = false) {
-        disposable = GalleryUtil.getMedia(this, builder.mediaType)
+        val albumAllText = builder.albumAllText ?: getString(builder.albumAllResId)
+        disposable = GalleryUtil.getMedia(this, builder.mediaType, albumAllText)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe { albumList: List<Album> ->
