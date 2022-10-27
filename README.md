@@ -41,6 +41,31 @@ dependencies {
 
 ```
 
+### Permissions
+
+- If your app need Android 13 support (targetSdkVersion >= 33 )
+
+```xml
+
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+
+```
+
+- Otherwise (targetSdkVersion <= 32 )
+
+```xml
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+```
+
 If you think this library is useful, please press star button at upside. </br>
 <img src="https://phaser.io/content/news/2015/09/10000-stars.png" width="200">
 
@@ -147,26 +172,26 @@ TedRxImagePicker.with(this)
 
 #### Common
 
-|      Function        |    Description    | 
-| ----------------------- | ---------------- |
-| `mediaType(MediaType)` | MediaType.IMAGE / MediaType.VIDEO |
-| `cameraTileBackground(R.color.xxx)`| camera Tile Background Color |
-| `cameraTileImage(R.drawable.xxx)` | camera tile image |
-| `showCameraTile(Boolean)` default `true` | show camera tile |
-| `scrollIndicatorDateFormat(String) (default: YYYY.MM)` | Format of date on scroll indicator |
-| `showTitle(Boolean)(default: true)` | Show title |
-| `title(String or R.string.xxx) (default: 'Select Image','사진 선택')` | title |
-| `albumAllText(String or R.string.xxx) (default: 'All','전체보기')` | name of the all photos album |
-| `backButton(R.drawable.xxx)` | back button |
-| `zoomIndicator(Boolean) (default: true)`| zoom indicator |
-| `image()` | image |
-| `video()` | video |
-| `imageCountTextFormat(String) (default: %s)`: `%s장`,  `Count: %s`| image count text format |
-| `savedDirectoryName(String)` | saved directory name from take picture using camera |
-| `startAnimation(Int, Int)` | start animation |
-| `finishAnimation(Int, Int)` | finish animation |
-| `errorListener()` | error listener for error |
-| `cancelListener()` | cancel listener |
+| Function                                                              | Description                                         |
+| --------------------------------------------------------------------- | --------------------------------------------------- |
+| `mediaType(MediaType)`                                                | MediaType.IMAGE / MediaType.VIDEO                   |
+| `cameraTileBackground(R.color.xxx)`                                   | camera Tile Background Color                        |
+| `cameraTileImage(R.drawable.xxx)`                                     | camera tile image                                   |
+| `showCameraTile(Boolean)` default `true`                              | show camera tile                                    |
+| `scrollIndicatorDateFormat(String) (default: YYYY.MM)`                | Format of date on scroll indicator                  |
+| `showTitle(Boolean)(default: true)`                                   | Show title                                          |
+| `title(String or R.string.xxx) (default: 'Select Image','사진 선택')` | title                                               |
+| `albumAllText(String or R.string.xxx) (default: 'All','전체보기')`    | name of the all photos album                        |
+| `backButton(R.drawable.xxx)`                                          | back button                                         |
+| `zoomIndicator(Boolean) (default: true)`                              | zoom indicator                                      |
+| `image()`                                                             | image                                               |
+| `video()`                                                             | video                                               |
+| `imageCountTextFormat(String) (default: %s)`: `%s장`,  `Count: %s`    | image count text format                             |
+| `savedDirectoryName(String)`                                          | saved directory name from take picture using camera |
+| `startAnimation(Int, Int)`                                            | start animation                                     |
+| `finishAnimation(Int, Int)`                                           | finish animation                                    |
+| `errorListener()`                                                     | error listener for error                            |
+| `cancelListener()`                                                    | cancel listener                                     |
 
 
 - Change picker primary color
@@ -178,17 +203,17 @@ TedRxImagePicker.with(this)
 
 #### Multi Select
 
-|      Method        |    Description    | 
-| ----------------------- | ---------------- |
-| `selectedUri(List<Uri>)` | selected uri |
-| `buttonGravity(ButtonGravity)` | You can change `done` button location top or bottom |
-| `buttonText(String or R.string.xxx) (default: 'Done','완료')` | you can change `done` button text |
-| `buttonBackground(R.drawable.xxx) (default: Blue Background)` | you can change `done` button background color |
-| `buttonTextColor(R.color.xxx) (default: white)` | `done` button text color |
-| `buttonDrawableOnly(R.drawable.xxx) (default: false)` | If you want show drawable button without text, use this method |
-| `max(Int, String or R.string.xxx)` | **max content** should picked from user device |
-| `min(Int, String or R.string.xxx)` | **min content** should picked from user device |
-| `drawerAlbum() / dropDownAlbum() (default: Drawer)`| You can choice Drawer or DropDown album style |
+| Method                                                        | Description                                                    |
+| ------------------------------------------------------------- | -------------------------------------------------------------- |
+| `selectedUri(List<Uri>)`                                      | selected uri                                                   |
+| `buttonGravity(ButtonGravity)`                                | You can change `done` button location top or bottom            |
+| `buttonText(String or R.string.xxx) (default: 'Done','완료')` | you can change `done` button text                              |
+| `buttonBackground(R.drawable.xxx) (default: Blue Background)` | you can change `done` button background color                  |
+| `buttonTextColor(R.color.xxx) (default: white)`               | `done` button text color                                       |
+| `buttonDrawableOnly(R.drawable.xxx) (default: false)`         | If you want show drawable button without text, use this method |
+| `max(Int, String or R.string.xxx)`                            | **max content** should picked from user device                 |
+| `min(Int, String or R.string.xxx)`                            | **min content** should picked from user device                 |
+| `drawerAlbum() / dropDownAlbum() (default: Drawer)`           | You can choice Drawer or DropDown album style                  |
 
   </br></br>
 
