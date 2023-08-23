@@ -136,7 +136,8 @@ internal class TedImagePickerActivity : AppCompatActivity() {
     }
 
     private fun loadMedia(isRefresh: Boolean = false) {
-        disposable = GalleryUtil.getMedia(this, builder.mediaType)
+        val albumAllText = builder.albumAllText ?: getString(builder.albumAllResId)
+        disposable = GalleryUtil.getMedia(this, builder.mediaType, albumAllText)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe { albumList: List<Album> ->
