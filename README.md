@@ -41,6 +41,34 @@ dependencies {
 
 ```
 
+### Permissions
+
+- If your app need Android 13 support (targetSdkVersion >= 33 )
+
+```xml
+
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+
+```
+
+- Otherwise (targetSdkVersion <= 32 )
+
+```xml
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+
+```
+
 If you think this library is useful, please press star button at upside. </br>
 <img src="https://phaser.io/content/news/2015/09/10000-stars.png" width="200">
 
