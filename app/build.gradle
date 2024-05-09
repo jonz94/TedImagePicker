@@ -4,8 +4,8 @@ apply plugin: 'kotlin-parcelize'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion versions.compileSdkVersion
     namespace "gun0912.tedimagepicker.sample"
+    compileSdkVersion versions.compileSdkVersion
     defaultConfig {
         applicationId "gun0912.tedimagepicker.sample"
         minSdkVersion versions.minSdkVersion
