@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         binding.btnNormalMulti.setOnClickListener {
             TedImagePicker.with(this)
                 //.mediaType(MediaType.IMAGE)
+                //.albumAllText("Custom album all text")
                 //.scrollIndicatorDateFormat("YYYYMMDD")
                 //.buttonGravity(ButtonGravity.BOTTOM)
                 //.buttonBackground(R.drawable.btn_sample_done_button)
