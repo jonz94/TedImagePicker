@@ -162,6 +162,7 @@ TedRxImagePicker.with(this)
 | `scrollIndicatorDateFormat(String) (default: YYYY.MM)` | Format of date on scroll indicator |
 | `showTitle(Boolean)(default: true)` | Show title |
 | `title(String or R.string.xxx) (default: 'Select Image','사진 선택')` | title |
+| `albumAllText(String or R.string.xxx) (default: 'All','전체보기')` | name of the all photos album |
 | `backButton(R.drawable.xxx)` | back button |
 | `zoomIndicator(Boolean) (default: true)`| zoom indicator |
 | `image()` | image |

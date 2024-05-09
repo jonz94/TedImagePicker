@@ -44,9 +44,12 @@ open class TedImagePickerBaseBuilder<out B : TedImagePickerBaseBuilder<B>>(
     internal var scrollIndicatorDateFormat: String = "yyyy.MM",
     internal var showTitle: Boolean = true,
     internal var title: String? = null,
+    internal var albumAllText: String? = null,
     internal var savedDirectoryName: String? = null,
     @StringRes
     internal var titleResId: Int = R.string.ted_image_picker_title,
+    @StringRes
+    internal var albumAllResId: Int = R.string.ted_image_picker_album_all,
     internal var buttonGravity: ButtonGravity = ButtonGravity.TOP,
     internal var buttonText: String? = null,
     @DrawableRes
@@ -190,6 +193,16 @@ open class TedImagePickerBaseBuilder<out B : TedImagePickerBaseBuilder<B>>(
 
     fun title(@StringRes textResId: Int): B {
         this.titleResId = textResId
+        return this as B
+    }
+
+    fun albumAllText(text: String): B {
+        this.albumAllText = text
+        return this as B
+    }
+
+    fun albumAllText(@StringRes textResId: Int): B {
+        this.albumAllResId = textResId
         return this as B
     }
 
