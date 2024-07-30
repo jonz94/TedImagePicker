@@ -24,6 +24,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.gun0912.tedonactivityresult.model.ActivityResult
 import com.gun0912.tedpermission.TedPermissionUtil
+import com.gun0912.tedpermission.rx2.TedPermission
 import com.tedpark.tedonactivityresult.rx2.TedRxOnActivityResult
 import gun0912.tedimagepicker.adapter.AlbumAdapter
 import gun0912.tedimagepicker.adapter.GridSpacingItemDecoration
@@ -455,7 +456,7 @@ internal class TedImagePickerActivity
                     && TedPermissionUtil.isGranted(Manifest.permission.READ_MEDIA_VISUAL_USER_SELECTED)
             root.isVisible = isPartialAccess
 
-            tvPartialAccessManage.setOnClickListener { showPartialAccessManageDialog() }
+            tvPartialAccessManage.setOnClickListener { requestPermission() }
             val mediaTypeText = getString(builder.mediaType.nameResId)
             tvPartialAccessNotice.text =
                 getString(R.string.ted_image_picker_partial_access_notice_fmt, mediaTypeText)
@@ -495,6 +496,14 @@ internal class TedImagePickerActivity
             binding.isAlbumOpened = false
         }
     }
+
+    private fun requestPermission() {
+        TedPermission.create()
+            .setPermissions(*builder.mediaType.permissions)
+            .request()
+            .subscribe()
+    }
+
 
     override fun onDestroy() {
         if (!disposable.isDisposed) {
