@@ -31,7 +31,11 @@
     <dimen name="ted_image_picker_album_width">200dp</dimen>
     <dimen name="ted_image_picker_album_text_max_width">120dp</dimen>
     <dimen name="ted_image_picker_selected_image_size">64dp</dimen>
-    <dimen name="ted_image_picker_selected_view_height">78dp</dimen>
+
+    <!-- Hide selected view -->
+    <!-- <dimen name="ted_image_picker_selected_view_height">78dp</dimen> -->
+    <dimen name="ted_image_picker_selected_view_height">0dp</dimen>
+
     <dimen name="ted_image_picker_selected_image_clear_size">20dp</dimen>
     <dimen name="ted_image_picker_selected_image_margin">4dp</dimen>
     <dimen name="ted_image_picker_done_button_vertical_padding">8dp</dimen>
